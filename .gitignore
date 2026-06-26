@@ -1,0 +1,18 @@
+# Virtual Environment
+laptop_venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# VS Code
+.vscode/
+
+# Pytest
+.pytest_cache/

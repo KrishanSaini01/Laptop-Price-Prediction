@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Laptop Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h2>Laptop Price Prediction</h2>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <!-- Company -->
+        <div class="form-group">
+            <label>Company</label>
+            <select name="company" required>
+                {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Product -->
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text" name="product" list="product-options" required>
+            <datalist id="product-options">
+                {% for product in products %}
+                <option value="{{ product }}"></option>
+                {% endfor %}
+            </datalist>
+        </div>
+
+        <!-- Type -->
+        <div class="form-group">
+            <label>Laptop Type</label>
+            <select name="typename" required>
+                {% for t in typenames %}
+                <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Screen Size -->
+        <div class="form-group">
+            <label>Screen Size (Inches)</label>
+            <input type="number" step="0.1" name="inches" required>
+        </div>
+
+        <!-- Screen Resolution -->
+        <div class="form-group">
+            <label>Screen Resolution</label>
+            <select name="screenresolution" required>
+                {% for sr in screenresolutions %}
+                <option value="{{ sr }}">{{ sr }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- CPU -->
+        <div class="form-group">
+            <label>CPU</label>
+            <select name="cpu" required>
+                {% for cpu in cpus %}
+                <option value="{{ cpu }}">{{ cpu }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- RAM -->
+        <div class="form-group">
+            <label>RAM</label>
+            <select name="ram" required>
+                {% for ram in rams %}
+                <option value="{{ ram }}">{{ ram }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Memory -->
+        <div class="form-group">
+            <label>Storage</label>
+            <select name="memory" required>
+                {% for mem in memories %}
+                <option value="{{ mem }}">{{ mem }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- GPU -->
+        <div class="form-group">
+            <label>GPU</label>
+            <select name="gpu" required>
+                {% for gpu in gpus %}
+                <option value="{{ gpu }}">{{ gpu }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Operating System -->
+        <div class="form-group">
+            <label>Operating System</label>
+            <select name="opsys" required>
+                {% for os in opsys_options %}
+                <option value="{{ os }}">{{ os }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Weight -->
+        <div class="form-group">
+            <label>Weight (KG)</label>
+            <input type="number" step="0.01" name="weight" required>
+        </div>
+
+        <button type="submit" class="predict-btn">
+            Predict Laptop Price
+        </button>
+
+    </form>
+
+</div>
+
+{% if prediction %}
+<div class="result">
+    <h3>Predicted Price: {{ prediction }}</h3>
+</div>
+{% endif %}
+
+</body>
+</html>

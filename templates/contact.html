@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">LaptopPredict</div>
+
+    <div class="nav-links">
+        <a href="/">Home</a>
+        <a href="/project">Prediction</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="form-container">
+
+        <h2>Contact Us</h2>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" style="width:100%; padding:12px;"></textarea>
+        </div>
+
+        <button class="predict-btn">
+            Send Message
+        </button>
+
+        <br><br>
+
+        <h3>Developer Contact</h3>
+        <p>📞 9216480150</p>
+
+    </div>
+
+</div>
+
+<footer>
+    <h3>Laptop Price Prediction System</h3>
+    <p>Powered by Flask & Machine Learning</p>
+</footer>
+
+</body>
+</html>
