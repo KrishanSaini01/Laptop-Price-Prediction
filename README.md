@@ -27,7 +27,6 @@ This project is a Machine Learning-based web application that predicts the price
 * Laptop Type
 * RAM
 * Weight
-* IPS Display
 * Screen Size
 * Screen Resolution
 * CPU
