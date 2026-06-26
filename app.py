@@ -10,10 +10,10 @@ model = joblib.load(r"Model\\RandomForestRegressor.lb")
 
 df = pd.read_csv(r"Data\\laptop_price.csv", encoding='latin1')
 
-Company_list = df['Company'].unique().tolist()
+Company_list = sorted(df['Company'].unique().tolist())
 Company_dict = {c: i + 1 for i, c in enumerate(Company_list)}
 
-Product_list = df['Product'].unique().tolist()
+Product_list = sorted(df['Product'].unique().tolist())
 Product_dict = {p: i + 1 for i, p in enumerate(Product_list)}
 
 TypeName_dict = {
@@ -21,10 +21,10 @@ TypeName_dict = {
     'Gaming': 4, '2 in 1 Convertible': 5, 'Workstation': 6
 }
 
-ScreenResolution_list = df['ScreenResolution'].unique().tolist()
+ScreenResolution_list = sorted(df['ScreenResolution'].unique().tolist())
 ScreenResolution_dict = {s: i + 1 for i, s in enumerate(ScreenResolution_list)}
 
-Cpu_list = df['Cpu'].unique().tolist()
+Cpu_list = sorted(df['Cpu'].unique().tolist())
 Cpu_dict = {c: i + 1 for i, c in enumerate(Cpu_list)}
 
 Ram_list = sorted(df['Ram'].unique().tolist(), key=lambda x: int(x.replace('GB', '')))
@@ -32,10 +32,10 @@ Ram_list = sorted(df['Ram'].unique().tolist(), key=lambda x: int(x.replace('GB',
 Memory_list = df['Memory'].unique().tolist()
 Memory_dict = {m: i + 1 for i, m in enumerate(Memory_list)}
 
-Gpu_list = df['Gpu'].unique().tolist()
+Gpu_list = sorted(df['Gpu'].unique().tolist())
 Gpu_dict = {g: i + 1 for i, g in enumerate(Gpu_list)}
 
-OpSys_list = df['OpSys'].unique().tolist()
+OpSys_list = sorted(df['OpSys'].unique().tolist())
 OpSys_dict = {o: i + 1 for i, o in enumerate(OpSys_list)}
 
 
