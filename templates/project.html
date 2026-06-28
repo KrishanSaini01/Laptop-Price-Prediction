@@ -1,133 +1,397 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Laptop Price Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Laptop Price</title>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<div class="form-container">
+<!-- ================= NAVBAR ================= -->
 
-    <h2>Laptop Price Prediction</h2>
+<header class="navbar">
 
-    <form action="{{ url_for('predict') }}" method="POST">
+    <div class="logo">
+        <span>Lap</span>Predict
+    </div>
 
-        <!-- Company -->
-        <div class="form-group">
-            <label>Company</label>
-            <select name="company" required>
-                {% for company in companies %}
-                <option value="{{ company }}">{{ company }}</option>
-                {% endfor %}
-            </select>
-        </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/project" class="active">Prediction</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
 
-        <!-- Product -->
-        <div class="form-group">
-            <label>Product Name</label>
-            <input type="text" name="product" list="product-options" required>
-            <datalist id="product-options">
-                {% for product in products %}
-                <option value="{{ product }}"></option>
-                {% endfor %}
-            </datalist>
-        </div>
+</header>
 
-        <!-- Type -->
-        <div class="form-group">
-            <label>Laptop Type</label>
-            <select name="typename" required>
-                {% for t in typenames %}
-                <option value="{{ t }}">{{ t }}</option>
-                {% endfor %}
-            </select>
-        </div>
+<!-- ================= PAGE HEADER ================= -->
 
-        <!-- Screen Size -->
-        <div class="form-group">
-            <label>Screen Size (Inches)</label>
-            <input type="number" step="0.1" name="inches" required>
-        </div>
+<section class="page-header">
 
-        <!-- Screen Resolution -->
-        <div class="form-group">
-            <label>Screen Resolution</label>
-            <select name="screenresolution" required>
-                {% for sr in screenresolutions %}
-                <option value="{{ sr }}">{{ sr }}</option>
-                {% endfor %}
-            </select>
-        </div>
+    <h1>Predict Laptop Price</h1>
 
-        <!-- CPU -->
-        <div class="form-group">
-            <label>CPU</label>
-            <select name="cpu" required>
-                {% for cpu in cpus %}
-                <option value="{{ cpu }}">{{ cpu }}</option>
-                {% endfor %}
-            </select>
-        </div>
+    <p>
 
-        <!-- RAM -->
-        <div class="form-group">
-            <label>RAM</label>
-            <select name="ram" required>
-                {% for ram in rams %}
-                <option value="{{ ram }}">{{ ram }}</option>
-                {% endfor %}
-            </select>
-        </div>
+        Select your laptop specifications below to estimate
+        its market price using our Machine Learning model.
 
-        <!-- Memory -->
-        <div class="form-group">
-            <label>Storage</label>
-            <select name="memory" required>
-                {% for mem in memories %}
-                <option value="{{ mem }}">{{ mem }}</option>
-                {% endfor %}
-            </select>
-        </div>
+    </p>
 
-        <!-- GPU -->
-        <div class="form-group">
-            <label>GPU</label>
-            <select name="gpu" required>
-                {% for gpu in gpus %}
-                <option value="{{ gpu }}">{{ gpu }}</option>
-                {% endfor %}
-            </select>
-        </div>
+</section>
 
-        <!-- Operating System -->
-        <div class="form-group">
-            <label>Operating System</label>
-            <select name="opsys" required>
-                {% for os in opsys_options %}
-                <option value="{{ os }}">{{ os }}</option>
-                {% endfor %}
-            </select>
-        </div>
+<!-- ================= FORM ================= -->
 
-        <!-- Weight -->
-        <div class="form-group">
-            <label>Weight (KG)</label>
-            <input type="number" step="0.01" name="weight" required>
-        </div>
+<section class="prediction-section">
 
-        <button type="submit" class="predict-btn">
-            Predict Laptop Price
-        </button>
+<div class="prediction-card">
 
-    </form>
+<h2>Laptop Specifications</h2>
+
+<form action="{{ url_for('predict') }}" method="POST">
+
+<div class="form-grid">
+
+<!-- Company -->
+
+<div class="form-group">
+
+<label>Company</label>
+
+<select name="company" required>
+
+{% for c in companies %}
+<option value="{{ c }}">{{ c }}</option>
+{% endfor %}
+
+</select>
 
 </div>
+
+<!-- Product -->
+<div class="form-group">
+    <label>Product Name</label>
+    <input type="text" name="product" list="product-options" required>
+        <datalist id="product-options">
+        {% for product in products %}
+            <option value="{{ product }}"></option>
+            {% endfor %}
+        </datalist>
+</div>
+
+<!-- Type -->
+
+<div class="form-group">
+
+<label>Type</label>
+
+<select name="typename" required>
+
+{% for t in typenames %}
+<option value="{{ t }}">{{ t }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+ <!-- Screen Size -->
+<div class="form-group">
+<label>Screen Size (Inches)</label>
+<input
+type="number"
+step="001"
+name="inches"
+placeholder="Example : 13.5"
+required>
+
+</div>
+
+
+<!-- RAM -->
+
+<div class="form-group">
+
+<label>RAM</label>
+
+<select name="ram" required>
+
+{% for r in rams %}
+<option value="{{ r }}">{{ r }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+<!-- Weight -->
+
+<div class="form-group">
+
+<label>Weight (Kg)</label>
+
+<input
+type="number"
+step="0.01"
+name="weight"
+placeholder="Example : 2.15"
+required>
+
+</div>
+
+<!-- CPU -->
+
+<div class="form-group">
+
+<label>Processor(CPU)</label>
+
+<select name="cpu" required>
+
+{% for cpu in cpus %}
+<option value="{{ cpu }}">{{ cpu }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+<!-- GPU -->
+
+<div class="form-group">
+
+<label>Graphics Card(GPU)</label>
+
+<select name="gpu" required>
+
+{% for gpu in gpus %}
+<option value="{{ gpu }}">{{ gpu }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+<!-- Memory -->
+
+<div class="form-group">
+
+<label>Storage</label>
+
+<select name="memory" required>
+
+{% for m in memories %}
+<option value="{{ m }}">{{ m }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+<!-- Screen -->
+
+<div class="form-group">
+
+<label>Screen Resolution</label>
+
+<select name="screenresolution" required>
+
+{% for s in screenresolutions %}
+<option value="{{ s }}">{{ s }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+<!-- Operating System -->
+
+<div class="form-group full-width">
+
+<label>Operating System</label>
+
+<select name="opsys" required>
+
+{% for os in opsys_options %}
+<option value="{{ os }}">{{ os }}</option>
+{% endfor %}
+
+</select>
+
+</div>
+
+</div>
+
+<button class="predict-btn">
+
+Predict Price
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================= RESULT ================= -->
 
 {% if prediction %}
-<div class="result">
-    <h3>Predicted Price: {{ prediction }}</h3>
+
+<section class="result-section">
+
+<div class="result-card">
+
+<h4>Estimated Laptop Price</h4>
+
+<h1>
+
+₹ {{ prediction }}
+
+</h1>
+
+<p>
+
+Prediction generated using Machine Learning.
+
+</p>
+
 </div>
+
+</section>
+
 {% endif %}
 
+<!-- ================= TIPS ================= -->
+
+<section class="tips">
+
+<div class="section-title">
+
+<h2>Factors Affecting Laptop Price</h2>
+
+<p>
+
+Our prediction model considers multiple hardware specifications.
+
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>Processor</h3>
+
+<p>
+
+Intel Core i7 / Ryzen processors generally increase laptop value.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>RAM</h3>
+
+<p>
+
+Higher RAM improves performance and resale price.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Storage</h3>
+
+<p>
+
+SSD storage significantly increases laptop price.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>GPU</h3>
+
+<p>
+
+Dedicated graphics cards raise gaming and workstation laptop prices.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>LapPredict</h2>
+
+<p>
+
+Machine Learning based Laptop Price Prediction System.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="/">Home</a>
+<a href="/project">Prediction</a>
+<a href="/about">About</a>
+<a href="/history">History</a>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>support@lappredict.com</p>
+
+<p>+91 9216480150</p>
+
+<p>India</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 LapPredict | All Rights Reserved
+
+</p>
+
+</footer>
+
 </body>
+
 </html>

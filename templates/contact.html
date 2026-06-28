@@ -1,60 +1,353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | LapPredict</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="logo">LaptopPredict</div>
+<!-- ================= NAVBAR ================= -->
 
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/project">Prediction</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </div>
+<header class="navbar">
+
+<div class="logo">
+<span>Lap</span>Predict
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/project">Prediction</a></li>
+
+<li><a href="/about">About</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/contact" class="active">Contact</a></li>
+
+</ul>
+
 </nav>
 
-<div class="container">
+</header>
 
-    <div class="form-container">
+<!-- ================= PAGE HEADER ================= -->
 
-        <h2>Contact Us</h2>
+<section class="page-header">
 
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" placeholder="Enter your name">
-        </div>
+<h1>Get In Touch</h1>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email">
-        </div>
+<p>
 
-        <div class="form-group">
-            <label>Message</label>
-            <textarea rows="5" style="width:100%; padding:12px;"></textarea>
-        </div>
+Have questions, suggestions, or feedback?
+We'd love to hear from you.
 
-        <button class="predict-btn">
-            Send Message
-        </button>
+</p>
 
-        <br><br>
+</section>
 
-        <h3>Developer Contact</h3>
-        <p>📞 9216480150</p>
+<!-- ================= CONTACT SECTION ================= -->
 
-    </div>
+<section class="contact-wrapper">
+
+<div class="contact-info">
+
+<h2>Contact Information</h2>
+
+<p>
+
+Whether you're a student, developer, or technology enthusiast,
+feel free to reach out regarding the Laptop Price Prediction project.
+
+</p>
+
+<div class="contact-item">
+
+<h3>Email</h3>
+
+<p>support@lappredict.com</p>
 
 </div>
 
+<div class="contact-item">
+
+<h3>Phone</h3>
+
+<p>+91 9216480150</p>
+
+</div>
+
+<div class="contact-item">
+
+<h3>Location</h3>
+
+<p>Rajasthan, India</p>
+
+</div>
+
+<div class="contact-item">
+
+<h3>Working Hours</h3>
+
+<p>Monday - Saturday</p>
+
+<p>09:00 AM - 06:00 PM</p>
+
+</div>
+
+</div>
+
+<!-- ================= CONTACT FORM ================= -->
+
+<div class="contact-form">
+
+<h2>Send Message</h2>
+
+<form>
+
+<div class="form-group">
+
+<label>Your Name</label>
+
+<input
+type="text"
+placeholder="Enter your name">
+
+</div>
+
+<div class="form-group">
+
+<label>Email Address</label>
+
+<input
+type="email"
+placeholder="Enter your email">
+
+</div>
+
+<div class="form-group">
+
+<label>Subject</label>
+
+<input
+type="text"
+placeholder="Enter subject">
+
+</div>
+
+<div class="form-group">
+
+<label>Your Message</label>
+
+<textarea
+rows="6"
+placeholder="Write your message here..."></textarea>
+
+</div>
+
+<button class="predict-btn">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ================= FAQ ================= -->
+
+<section class="features">
+
+<div class="section-title">
+
+<h2>Frequently Asked Questions</h2>
+
+<p>
+
+Common questions about the Laptop Price Prediction project.
+
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>How does prediction work?</h3>
+
+<p>
+
+The model predicts laptop prices based on
+hardware specifications using Machine Learning.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Is my data stored?</h3>
+
+<p>
+
+No. The website only uses the data for prediction
+and does not save personal information.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>How accurate is it?</h3>
+
+<p>
+
+Predictions are based on a trained dataset and
+provide estimated market prices.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Can I use it for free?</h3>
+
+<p>
+
+Yes. The project is built for educational
+and demonstration purposes.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MAP SECTION ================= -->
+
+<section class="workflow">
+
+<div class="left">
+
+<h2>Let's Build Better ML Projects</h2>
+
+<p>
+
+This Laptop Price Prediction System demonstrates how
+Machine Learning can simplify price estimation and
+help users make smarter purchasing decisions.
+
+</p>
+
+</div>
+
+<div class="right">
+
+<div class="step">
+
+<span>01</span>
+
+Ask Questions
+
+</div>
+
+<div class="step">
+
+<span>02</span>
+
+Get Support
+
+</div>
+
+<div class="step">
+
+<span>03</span>
+
+Keep Learning
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <h3>Laptop Price Prediction System</h3>
-    <p>Powered by Flask & Machine Learning</p>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>LapPredict</h2>
+
+<p>
+
+Machine Learning based Laptop Price Prediction System.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="/">Home</a>
+
+<a href="/project">Prediction</a>
+
+<a href="/about">About</a>
+
+<a href="/history">History</a>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>support@lappredict.com</p>
+
+<p>+91 9216480150</p>
+
+<p>Rajasthan, India</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 LapPredict | All Rights Reserved
+
+</p>
+
 </footer>
 
 </body>
+
 </html>

@@ -1,52 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>About Us</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | LapPredict</title>
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="logo">LaptopPredict</div>
+<!-- ================= NAVBAR ================= -->
 
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/project">Prediction</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </div>
+<header class="navbar">
+
+<div class="logo">
+<span>Lap</span>Predict
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/project">Prediction</a></li>
+
+<li><a href="/about" class="active">About</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/contact">Contact</a></li>
+
+</ul>
+
 </nav>
 
-<div class="container">
+</header>
 
-    <div class="card" style="padding:40px;">
-        <h1>About Us</h1>
-        <br>
+<!-- ================= PAGE HEADER ================= -->
 
-        <p>
-            Welcome to the Laptop Price Prediction System.
-            This project uses Machine Learning algorithms
-            to estimate laptop prices based on specifications
-            such as RAM, Processor, Storage, Operating System,
-            Screen Size and Weight.
-        </p>
+<section class="page-header">
 
-        <br>
+<h1>About Our Project</h1>
 
-        <p>
-            Our goal is to help users make informed decisions
-            while buying or selling laptops by providing
-            accurate price predictions.
-        </p>
+<p>
 
-    </div>
+A Machine Learning based Laptop Price Prediction System
+that estimates laptop prices using hardware specifications.
+
+</p>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about-section">
+
+<div class="about-left">
+
+<h2>Our Mission</h2>
+
+<p>
+
+LapPredict is designed to estimate laptop prices using
+Machine Learning. The system analyzes important hardware
+features such as Processor, RAM, GPU, Storage,
+Operating System, Display Resolution and Weight
+to predict an approximate market price.
+
+</p>
+
+<p>
+
+The objective of this project is to help buyers,
+students and sellers quickly estimate laptop prices
+without manually comparing hundreds of products.
+
+</p>
+
+<a href="/project" class="btn-primary">
+
+Try Prediction
+
+</a>
 
 </div>
 
+<div class="about-right">
+
+<div class="info-card">
+
+<h3>Machine Learning</h3>
+
+<p>
+
+Prediction based on trained regression algorithms.
+
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>Dataset</h3>
+
+<p>
+
+1300+ laptops with multiple hardware specifications.
+
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>Fast Results</h3>
+
+<p>
+
+Price prediction generated within seconds.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="section-title">
+
+<h2>Project Highlights</h2>
+
+<p>
+
+Built using modern Machine Learning techniques.
+
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
+<h3>20+ Brands</h3>
+
+<p>
+
+Supports prediction for Apple, Dell, HP,
+Lenovo, ASUS and many more.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Multiple Specifications</h3>
+
+<p>
+
+CPU, GPU, RAM, Storage,
+Screen Resolution and OS.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Responsive Website</h3>
+
+<p>
+
+Works perfectly on desktop,
+tablet and mobile devices.
+
+</p>
+
+</div>
+
+<div class="feature-card">
+
+<h3>Easy To Use</h3>
+
+<p>
+
+Simple interface with
+quick prediction results.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TEAM ================= -->
+
+<section class="workflow">
+
+<div class="left">
+
+<h2>Why This Project?</h2>
+
+<p>
+
+Laptop prices vary depending on many hardware
+specifications. Comparing every laptop manually
+takes time.
+
+LapPredict automates this process by using
+Machine Learning to provide an instant estimate.
+
+</p>
+
+</div>
+
+<div class="right">
+
+<div class="step">
+
+<span>01</span>
+
+Collect Laptop Specifications
+
+</div>
+
+<div class="step">
+
+<span>02</span>
+
+ML Model Prediction
+
+</div>
+
+<div class="step">
+
+<span>03</span>
+
+Estimated Laptop Price
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <h3>Laptop Price Prediction System</h3>
-    <p>Powered by Flask & Machine Learning</p>
+
+<div class="footer-grid">
+
+<div>
+
+<h2>LapPredict</h2>
+
+<p>
+
+Helping users estimate laptop prices
+using Machine Learning.
+
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="/">Home</a>
+
+<a href="/project">Prediction</a>
+
+<a href="/about">About</a>
+
+<a href="/history">History</a>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>support@lappredict.com</p>
+
+<p>+91 9216480150</p>
+
+<p>India</p>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 LapPredict | All Rights Reserved
+
+</p>
+
 </footer>
 
 </body>
+
 </html>

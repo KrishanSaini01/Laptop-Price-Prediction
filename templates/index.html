@@ -1,60 +1,336 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Laptop Price Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
 </head>
+
 <body>
 
-<nav class="navbar">
-    <div class="logo">LaptopPredict</div>
+<!---------------- NAVBAR ---------------->
 
-    <div class="nav-links">
-        <a href="/">Home</a>
-        <a href="/project">Prediction</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+<header class="navbar">
+
+    <div class="logo">
+        <span>Lap</span>Predict
     </div>
-</nav>
+
+    <nav>
+
+        <ul>
+
+            <li><a href="/">Home</a></li>
+
+            <li><a href="/project">Predict</a></li>
+
+            <li><a href="/about">About</a></li>
+
+            <li><a href="/history">History</a></li>
+
+            <li><a href="/contact">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<!---------------- HERO ---------------->
 
 <section class="hero">
-    <div>
-        <h1>Laptop Price <span>Prediction</span></h1>
+
+    <div class="hero-content">
+
+        <span class="tag">Machine Learning Project</span>
+
+        <h1>
+
+            Predict the
+            <span>Laptop Price</span>
+            with Precision
+
+        </h1>
 
         <p>
-            Predict laptop prices instantly using Machine Learning.
-            Enter laptop specifications and get estimated market value.
+
+            Estimate the market value of any laptop based on
+            specifications like Processor, RAM, GPU, Storage,
+            Operating System and Display.
+
         </p>
 
-        <a href="/project" class="btn">Start Prediction</a>
+        <div class="hero-btns">
+
+            <a href="/project" class="btn-primary">
+
+                Start Prediction
+
+            </a>
+
+            <a href="/about" class="btn-outline">
+
+                Learn More
+
+            </a>
+
+        </div>
+
     </div>
+
+<div class="hero-image">
+    <img src="https://t4.ftcdn.net/jpg/19/00/73/99/240_F_1900739946_DvZXyRE0LiyoH6S2dswfBTFgfKa2R7C3.jpg" alt="Laptop">
+</div> 
+
 </section>
 
-<div class="container">
-    <div class="cards">
+<!---------------- FEATURES ---------------->
 
-        <div class="card">
-            <h2>Fast</h2>
-            <p>Instant price prediction within seconds.</p>
+<section class="features">
+
+    <div class="section-title">
+
+        <h2>Why Use LapPredict?</h2>
+
+        <p>
+
+            Built using Machine Learning algorithms to estimate laptop
+            prices from real-world specifications.
+
+        </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+        <article class="feature-card">
+
+            <h3>⚡ Fast Prediction</h3>
+
+            <p>
+
+                Predict laptop prices within seconds.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <h3>💻 Smart Analysis</h3>
+
+            <p>
+
+                Uses processor, RAM, storage and GPU for prediction.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <h3>📊 ML Powered</h3>
+
+            <p>
+
+                Trained using real laptop market datasets.
+
+            </p>
+
+        </article>
+
+        <article class="feature-card">
+
+            <h3>🔒 Secure</h3>
+
+            <p>
+
+                No personal information is stored.
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!---------------- HOW IT WORKS ---------------->
+
+<section class="workflow">
+
+    <div class="left">
+
+        <h2>How Prediction Works</h2>
+
+        <p>
+
+            Enter your laptop specifications, submit the form,
+            and our trained machine learning model instantly predicts
+            the approximate selling price.
+
+        </p>
+
+    </div>
+
+    <div class="right">
+
+        <div class="step">
+
+            <span>01</span>
+
+            Select Laptop Details
+
         </div>
 
-        <div class="card">
-            <h2>Accurate</h2>
-            <p>Machine learning based predictions.</p>
+        <div class="step">
+
+            <span>02</span>
+
+            Machine Learning Processing
+
         </div>
 
-        <div class="card">
-            <h2>Reliable</h2>
-            <p>Built using real laptop market data.</p>
+        <div class="step">
+
+            <span>03</span>
+
+            Price Prediction
+
         </div>
 
     </div>
-</div>
+
+</section>
+
+<!---------------- STATS ---------------->
+
+<section class="stats">
+
+    <div>
+
+        <h2>1300+</h2>
+
+        <p>Laptops</p>
+
+    </div>
+
+    <div>
+
+        <h2>95%</h2>
+
+        <p>Prediction Accuracy</p>
+
+    </div>
+
+    <div>
+
+        <h2>20+</h2>
+
+        <p>Brands</p>
+
+    </div>
+
+    <div>
+
+        <h2>24/7</h2>
+
+        <p>Available</p>
+
+    </div>
+
+</section>
+
+<!---------------- CTA ---------------->
+
+<section class="cta">
+
+    <div>
+
+        <h2>
+
+            Curious About Your Laptop's Price?
+
+        </h2>
+
+        <p>
+
+            Click below and get an instant estimate.
+
+        </p>
+
+        <a href="/project" class="btn-primary">
+
+            Predict Now →
+
+        </a>
+
+    </div>
+
+</section>
+
+<!---------------- FOOTER ---------------->
 
 <footer>
-    <h3>Laptop Price Prediction System</h3>
-    <p>Powered by Flask & Machine Learning</p>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h2>LapPredict</h2>
+
+            <p>
+
+                Machine Learning based Laptop Price Prediction System.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Navigation</h3>
+
+            <a href="/">Home</a>
+            <a href="/project">Prediction</a>
+            <a href="/about">About</a>
+            <a href="/history">History</a>
+
+        </div>
+
+        <div>
+
+            <h3>Support</h3>
+
+            <p>Email : support@lappredict.com</p>
+
+            <p>Phone : +91 9216480150</p>
+
+            <p>India</p>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 LapPredict | All Rights Reserved
+
+    </p>
+
 </footer>
 
 </body>
+
 </html>

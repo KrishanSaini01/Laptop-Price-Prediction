@@ -106,10 +106,13 @@ def predict():
     print(type(company), type(product), type(typename), type(inches), type(screenresolution),type(cpu), type(ram), type(memory), type(gpu), type(opsys), type(weight))
 
     data = [[company, product, typename, inches, screenresolution, cpu, ram, memory, gpu, opsys, weight]]
-    pred = model.predict(data)
+    pred = model.predict(data)[0]
+    
     print("Prediction 🤖🤖>>>>", pred)
+    
+    price=int(pred)
 
-    return render_template('project.html', **get_dropdown_options(), prediction=pred[0])
+    return render_template('project.html', **get_dropdown_options(), prediction=price)
 
 
 if __name__ == "__main__":
